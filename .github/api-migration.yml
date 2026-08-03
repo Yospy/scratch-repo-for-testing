@@ -1,0 +1,23 @@
+# Managed by the API migration platform.
+#
+# Merging this file authorizes the platform to open migration issues for this
+# repository. Delete it to revoke that authorization.
+# Path: .github/api-migration.yml
+
+version: 1
+agent: "claude"
+
+# Packages this repository wants migration help for.
+watch:
+  - "pkg:pypi/torch"
+
+# The only paths an agent may modify.
+paths:
+  - "simple.py"
+
+# What to do for each classification of change.
+policy:
+  breaking: "pr"
+  deprecation: "pr"
+  additive: "ignore"
+  low_confidence: "report_only"
