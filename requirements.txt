@@ -1,0 +1,25 @@
+# Core PyTorch stack
+torch
+torchvision
+torchaudio
+
+# Data & numerics
+numpy
+pandas
+
+# Visualization
+matplotlib
+seaborn
+
+# ML utilities (metrics, splits, etc.)
+scikit-learn
+
+# Training helpers
+tqdm
+
+# Image handling (used by torchvision)
+pillow
+
+# Jupyter notebooks for interactive learning
+jupyter
+ipykernel
