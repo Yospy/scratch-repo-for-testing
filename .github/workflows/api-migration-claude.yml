@@ -1,4 +1,4 @@
-# setorra-managed: sha256:0b1e8442d74f8b07c5f1cb74f6a41709f70ed058827bf0d558f9ebc4a3ff54e3
+# setorra-managed: sha256:0c1772fc089ee78f2f625c1cb5de2f5c7a153a303fea16c92f0e92386e299858
 # Managed by the API migration platform. Regenerate with the onboarding tool.
 #
 # This job runs only for issues opened by the platform's GitHub App that also
@@ -11,6 +11,9 @@ on:
 
 jobs:
   migrate:
+    concurrency:
+      group: api-migration-${{ github.event.issue.number }}
+      cancel-in-progress: true
     if: >-
       github.event.issue.user.login == 'setorra[bot]' &&
       contains(github.event.issue.labels.*.name, 'api-migration')
@@ -23,7 +26,7 @@ jobs:
       id-token: write
     steps:
       - name: Check out the repository
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
       - name: Run the Claude coding agent
