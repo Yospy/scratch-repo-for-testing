@@ -49,3 +49,4 @@ attn = attn.contiguous().reshape(batch, seq, d_model)
 
 print("Combined output:", attn.shape)
 # (4, 16, 16)
+print("GQA attention demo complete")
