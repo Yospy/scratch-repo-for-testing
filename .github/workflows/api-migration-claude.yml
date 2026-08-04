@@ -1,4 +1,4 @@
-# setorra-managed: sha256:2008188e10a9cf10e6dc2134ff4d85eb00cdd29ab7ce9dfb86d976d552b1b4b5
+# setorra-managed: sha256:0b1e8442d74f8b07c5f1cb74f6a41709f70ed058827bf0d558f9ebc4a3ff54e3
 # Managed by the API migration platform. Regenerate with the onboarding tool.
 #
 # This job runs only for issues opened by the platform's GitHub App that also
@@ -20,6 +20,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
+      id-token: write
     steps:
       - name: Check out the repository
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
