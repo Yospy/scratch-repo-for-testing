@@ -1,8 +1,12 @@
-# setorra-managed: sha256:334b6163709076c1f973897fbab2343980a7f0dc31e137ea101556118dc5e5d5
+# setorra-managed: sha256:979af3358974bb0fccd94587cd49ad7d59342bd6e09c0a78c35310a79a659567
 # Managed by the API migration platform. Regenerate with the onboarding tool.
 #
 # This job runs only for issues opened by the platform's GitHub App that also
 # carry the migration label. It never runs for issues opened by anyone else.
+#
+# Merging this file authorizes the platform to run an agent in this repository.
+# Deleting it, or removing the secret below, revokes that authorization: with no
+# workflow there is nothing for an issue to trigger.
 name: API Migration (Claude)
 
 on:
