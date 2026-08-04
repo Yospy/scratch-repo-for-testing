@@ -1,3 +1,4 @@
+# setorra-managed: sha256:2008188e10a9cf10e6dc2134ff4d85eb00cdd29ab7ce9dfb86d976d552b1b4b5
 # Managed by the API migration platform. Regenerate with the onboarding tool.
 #
 # This job runs only for issues opened by the platform's GitHub App that also
@@ -27,6 +28,6 @@ jobs:
       - name: Run the Claude coding agent
         uses: anthropics/claude-code-action@be7b93b1907a4abad570368f3c74b6fe3807510b # v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           allowed_bots: "setorra[bot]"
           label_trigger: "api-migration"
