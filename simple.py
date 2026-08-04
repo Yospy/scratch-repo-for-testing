@@ -12,17 +12,9 @@ q = torch.randn(batch, num_q_heads, seq, head_dim)
 k = torch.randn(batch, num_kv_heads, seq, head_dim)
 v = torch.randn(batch, num_kv_heads, seq, head_dim)
 
-# Each KV head is used by 2 query heads.
-queries_per_kv = num_q_heads // num_kv_heads  # 2
-
-# Conceptually:
-# K1, K2 → K1, K1, K2, K2
-k = k.repeat_interleave(queries_per_kv, dim=1)
-v = v.repeat_interleave(queries_per_kv, dim=1)
-
 print("Q:", q.shape)  # (4, 4, 16, 4)
-print("K:", k.shape)  # (4, 4, 16, 4)
-print("V:", v.shape)  # (4, 4, 16, 4)
+print("K:", k.shape)  # (4, 2, 16, 4)
+print("V:", v.shape)  # (4, 2, 16, 4)
 
 # Replaces:
 # scores = q @ k.transpose(-2, -1)
@@ -35,6 +27,7 @@ attn = F.scaled_dot_product_attention(
     k,
     v,
     is_causal=True,
+    enable_gqa=True,
 )
 
 print("Per-head output:", attn.shape)
