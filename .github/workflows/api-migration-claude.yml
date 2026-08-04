@@ -1,4 +1,4 @@
-# setorra-managed: sha256:93934374efc112c01ba08009497e1cff0bff7f15ad01b3caa96f670aa2da6264
+# setorra-managed: sha256:334b6163709076c1f973897fbab2343980a7f0dc31e137ea101556118dc5e5d5
 # Managed by the API migration platform. Regenerate with the onboarding tool.
 #
 # This job runs only for issues opened by the platform's GitHub App that also
@@ -48,4 +48,4 @@ jobs:
 
             Do not merge the pull request.
           claude_args: |
-            --allowedTools "Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(python3:*),Bash(pytest:*),Bash(npm test:*)"
+            --allowedTools "Read,Edit,Write,Glob,Grep,Bash(git:*),Bash(gh:*),Bash(python3:*),Bash(pytest:*),Bash(npm:*)"
