@@ -4,7 +4,7 @@ torchvision
 torchaudio
 
 # Data & numerics
-numpy
+numpy==2.5.2
 pandas
 
 # Visualization
